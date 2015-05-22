@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 #import <MessageUI/MessageUI.h>
 
-#import "IDMPhoto.h"
 #import "IDMPhotoProtocol.h"
 #import "IDMCaptionView.h"
 
@@ -25,7 +24,7 @@
 @end
 
 // IDMPhotoBrowser
-@interface IDMPhotoBrowser : UIViewController <UIScrollViewDelegate, UIActionSheetDelegate> 
+@interface IDMPhotoBrowser : UIViewController <UIScrollViewDelegate, UIActionSheetDelegate>
 
 // Properties
 @property (nonatomic, strong) id <IDMPhotoBrowserDelegate> delegate;
@@ -58,6 +57,8 @@
 
 // animation time (default .28)
 @property (nonatomic) float animationDuration;
+
+@property (nonatomic) Class pageClass;
 
 // Init
 - (id)initWithPhotos:(NSArray *)photosArray;

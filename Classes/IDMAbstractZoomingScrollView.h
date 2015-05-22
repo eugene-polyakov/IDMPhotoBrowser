@@ -14,14 +14,14 @@
 @class IDMPhotoBrowser, IDMPhoto, IDMCaptionView;
 
 @interface IDMAbstractZoomingScrollView : UIScrollView <UIScrollViewDelegate, IDMTapDetectingImageViewDelegate, IDMTapDetectingViewDelegate> {
-	
-	IDMPhotoBrowser *__weak _photoBrowser;
+    
+    IDMPhotoBrowser *__weak _photoBrowser;
     id<IDMPhoto> _photo;
-	
+    
     // This view references the related caption view for simplified handling in photo browser
     IDMCaptionView *_captionView;
     
-	IDMTapDetectingView *_tapView; // for background taps
+    IDMTapDetectingView *_tapView; // for background taps
 }
 
 @property (nonatomic, weak) IDMPhotoBrowser *photoBrowser;
@@ -30,9 +30,8 @@
 @property (nonatomic, strong) id<IDMPhoto> photo;
 
 - (id)initWithPhotoBrowser:(IDMPhotoBrowser *)browser;
-//- (void)displayImage;
-//- (void)displayImageFailure;
 - (void)setMaxMinZoomScalesForCurrentBounds;
 - (void)prepareForReuse;
+- (void)display;
 
 @end

@@ -11,7 +11,7 @@
 @protocol IDMTapDetectingImageViewDelegate;
 
 @interface IDMTapDetectingImageView : UIImageView {
-	id <IDMTapDetectingImageViewDelegate> __weak tapDelegate;
+    id <IDMTapDetectingImageViewDelegate> __weak tapDelegate;
 }
 @property (nonatomic, weak) id <IDMTapDetectingImageViewDelegate> tapDelegate;
 - (void)handleSingleTap:(UITouch *)touch;

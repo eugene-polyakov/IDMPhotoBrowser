@@ -7,6 +7,8 @@
 //
 
 #import "Menu.h"
+#import "IDMPhoto.h"
+#import "IDMZoomingScrollView.h"
 
 @implementation UIAlertView (UIAlertViewWithTitle)
 
@@ -115,6 +117,7 @@
     browser.displayCounterLabel = YES;
     browser.usePopAnimation = YES;
     browser.scaleImage = buttonSender.currentImage;
+    browser.pageClass = IDMZoomingScrollView.class;
     if(buttonSender.tag == 102) browser.useWhiteBackgroundColor = YES;
     
     // Show

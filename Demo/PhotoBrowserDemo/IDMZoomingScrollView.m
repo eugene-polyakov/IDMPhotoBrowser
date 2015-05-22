@@ -108,5 +108,16 @@
     [_progressView removeFromSuperview];
 }
 
+-(void)display {
+    if ([self.photo underlyingImage]) {
+        // Successful load
+        [self displayImage];
+    } else {
+        // Failed to load
+        [self displayImageFailure];
+    }
+
+}
+
 
 @end
