@@ -7,7 +7,6 @@
 //
 
 #import "IDMCaptionView.h"
-#import "IDMPhoto.h"
 #import <QuartzCore/QuartzCore.h>
 
 static const CGFloat labelPadding = 10;
@@ -15,7 +14,7 @@ static const CGFloat labelPadding = 10;
 // Private
 @interface IDMCaptionView () {
     id<IDMPhoto> _photo;
-    UILabel *_label;    
+    UILabel *_label;
 }
 @end
 
@@ -50,8 +49,8 @@ static const CGFloat labelPadding = 10;
     if (_label.numberOfLines > 0) maxHeight = _label.font.leading*_label.numberOfLines;
     
     /*CGSize textSizeOLD = [_label.text sizeWithFont:_label.font
-                              constrainedToSize:CGSizeMake(size.width - labelPadding*2, maxHeight)
-                                  lineBreakMode:_label.lineBreakMode];*/
+     constrainedToSize:CGSizeMake(size.width - labelPadding*2, maxHeight)
+     lineBreakMode:_label.lineBreakMode];*/
     
     NSString *text = _label.text;
     CGFloat width = size.width - labelPadding*2;
@@ -70,7 +69,7 @@ static const CGFloat labelPadding = 10;
 }
 
 - (void)setupCaption {
-    _label = [[UILabel alloc] initWithFrame:CGRectMake(labelPadding, 0, 
+    _label = [[UILabel alloc] initWithFrame:CGRectMake(labelPadding, 0,
                                                        self.bounds.size.width-labelPadding*2,
                                                        self.bounds.size.height)];
     _label.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
