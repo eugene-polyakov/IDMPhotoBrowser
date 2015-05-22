@@ -461,7 +461,8 @@ NSLocalizedStringFromTableInBundle((key), nil, [NSBundle bundleWithPath:[[NSBund
     [_applicationWindow addSubview:fadeView];
     
     CGRect finalFrame = [IDMPhotoBrowser fullScreenRectForImage:imageFromView];
-    
+    finalFrame.origin.y += scrollView.frame.origin.y;
+
     UIImageView *resizableImageView = [[UIImageView alloc] initWithImage:imageFromView];
     resizableImageView.frame = (imageFromView) ? finalFrame : CGRectZero;
     resizableImageView.contentMode = UIViewContentModeScaleAspectFill;
