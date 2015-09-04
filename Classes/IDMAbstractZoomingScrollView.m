@@ -77,39 +77,39 @@
 // Get and display image
 
 - (void)displayImage {
-    //	if (_photo && _photoImageView.image == nil) {
-    //		// Reset
-    //		self.maximumZoomScale = 1;
-    //		self.minimumZoomScale = 1;
-    //		self.zoomScale = 1;
-    //
-    //		self.contentSize = CGSizeMake(0, 0);
-    //
-    //		// Get image from browser as it handles ordering of fetching
-    //		UIImage *img = [self.photoBrowser imageForPhoto:_photo];
-    //		if (img) {
-    //
-    //            // Set image
-    //			_photoImageView.image = img;
-    //			_photoImageView.hidden = NO;
-    //
-    //            // Setup photo frame
-    //			CGRect photoImageViewFrame;
-    //			photoImageViewFrame.origin = CGPointZero;
-    //			photoImageViewFrame.size = img.size;
-    //
-    //			_photoImageView.frame = photoImageViewFrame;
-    //			self.contentSize = photoImageViewFrame.size;
-    //
-    //			// Set zoom to minimum zoom
-    //			[self setMaxMinZoomScalesForCurrentBounds];
-    //        } else {
-    //			// Hide image view
-    //			_photoImageView.hidden = YES;
-    //        }
-    //
-    //		[self setNeedsLayout];
-    //	}
+    if (_photo && _photoImageView.image == nil) {
+        // Reset
+        self.maximumZoomScale = 1;
+        self.minimumZoomScale = 1;
+        self.zoomScale = 1;
+        
+        self.contentSize = CGSizeMake(0, 0);
+        
+        // Get image from browser as it handles ordering of fetching
+        UIImage *img = [self.photoBrowser imageForPhoto:_photo];
+        if (img) {
+            
+            // Set image
+            _photoImageView.image = img;
+            _photoImageView.hidden = NO;
+            
+            // Setup photo frame
+            CGRect photoImageViewFrame;
+            photoImageViewFrame.origin = CGPointZero;
+            photoImageViewFrame.size = img.size;
+            
+            _photoImageView.frame = photoImageViewFrame;
+            self.contentSize = photoImageViewFrame.size;
+            
+            // Set zoom to minimum zoom
+            [self setMaxMinZoomScalesForCurrentBounds];
+        } else {
+            // Hide image view
+            _photoImageView.hidden = YES;
+        }
+        
+        [self setNeedsLayout];
+    }
 }
 
 

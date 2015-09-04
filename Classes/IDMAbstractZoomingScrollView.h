@@ -31,6 +31,8 @@
 
 - (id)initWithPhotoBrowser:(IDMPhotoBrowser *)browser;
 - (void)setMaxMinZoomScalesForCurrentBounds;
+- (void)displayImage;
+- (void)displayImageFailure;
 - (void)prepareForReuse;
 - (void)display;
 
