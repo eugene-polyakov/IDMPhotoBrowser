@@ -266,6 +266,10 @@ NSLocalizedStringFromTableInBundle((key), nil, [NSBundle bundleWithPath:[[NSBund
 
 #pragma mark - Pan Gesture
 
+-(void)adjustStatusBarPreClose {
+    
+}
+
 - (void)panGestureRecognized:(id)sender {
     // Initial Setup
     IDMAbstractZoomingScrollView *scrollView = [self pageDisplayedAtIndex:_currentPageIndex];
@@ -328,7 +332,7 @@ NSLocalizedStringFromTableInBundle((key), nil, [NSBundle bundleWithPath:[[NSBund
             [scrollView setCenter:CGPointMake(finalX, finalY)];
             self.view.backgroundColor = [UIColor colorWithWhite:0 alpha:0];
             [UIView commitAnimations];
-            
+            [self adjustStatusBarPreClose];
             [self performSelector:@selector(doneButtonPressed:) withObject:self afterDelay:animationDuration];
         }
         else // Continue Showing View
@@ -506,6 +510,7 @@ NSLocalizedStringFromTableInBundle((key), nil, [NSBundle bundleWithPath:[[NSBund
             completion();
         }];
     }
+    [self adjustStatusBarPreClose];
 }
 
 #pragma mark - Genaral
