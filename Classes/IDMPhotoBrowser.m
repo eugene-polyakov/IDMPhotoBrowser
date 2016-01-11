@@ -1254,6 +1254,7 @@ NSLocalizedStringFromTableInBundle((key), nil, [NSBundle bundleWithPath:[[NSBund
         [self performCloseAnimationWithScrollView:scrollView];
     }
     else {
+        [self adjustStatusBarPreClose];
         _senderViewForAnimation.hidden = NO;
         [self prepareForClosePhotoBrowser];
         [self dismissPhotoBrowserAnimated:YES];
